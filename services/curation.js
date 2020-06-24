@@ -83,11 +83,19 @@ module.exports = class Curation {
         break;
 
       case "CURATION_FOR_ME":
-        response = Response.genText(this.generateInspiringQuote());
-        // response = this.generateInspiringQuote();
+        response = Response.genQuickReply(this.generateInspiringQuote(), [
+          {
+            title: i18n.__("curation.me"),
+            payload: "CURATION_FOR_ME"
+          },
+          {
+            title: i18n.__("curation.someone"),
+            payload: "CURATION_SOMEONE_ELSE"
+          }
+        ]);
         break;
       case "CURATION_SOMEONE_ELSE":
-        response = generateFunnyQuote();
+        response = Response.genText(this.generateFunnyQuote());
         break;
 
       case "CURATION_OCASION_WORK":
