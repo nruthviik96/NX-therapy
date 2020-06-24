@@ -98,7 +98,7 @@ module.exports = class Care {
           Response.genTextWithPersona(
             i18n.__("care.issue", {
               userFirstName: this.user.firstName,
-              agentFirstName: config.personaSales.name
+              agentFirstName: config.personaSales.name,
               topic: i18n.__("care.MentalHealth")
             }),
             config.personaSales.id
