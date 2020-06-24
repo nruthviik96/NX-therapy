@@ -83,7 +83,8 @@ module.exports = class Curation {
         break;
 
       case "CURATION_FOR_ME":
-        response = generateInspiringQuote();
+        response.genQuickReply(i18n.__(this.generateInspiringQuote()));
+        // response = this.generateInspiringQuote();
         break;
       case "CURATION_SOMEONE_ELSE":
         response = generateFunnyQuote();
@@ -220,7 +221,7 @@ module.exports = class Curation {
   }
 
   generateInspiringQuote() {
-    let inspiringQuotes = ["No one can make you feel inferior without your consent.", "We are all in the gutter, but some of us are looking at the stars.", 
+    let inspiringQuote = ["No one can make you feel inferior without your consent.", "We are all in the gutter, but some of us are looking at the stars.", 
     "I have not failed. I've just found 10,000 ways that won't work.", "It is never too late to be what you might have been.",
   "Everything you can imagine is real.", "Life isn't about finding yourself. Life is about creating yourself.",
 "Do what you can, with what you have, where you are.", "Success is not final, failure is not fatal: it is the courage to continue that counts",
