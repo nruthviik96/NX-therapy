@@ -92,6 +92,20 @@ module.exports = class Receive {
     } else if (message.includes(i18n.__("care.help").toLowerCase())) {
       let care = new Care(this.user, this.webhookEvent);
       response = care.handlePayload("CARE_HELP");
+    } else if (message.includes("hey") || message.includes("hi")) {
+      response = [Response.genText(i18n.__("get_started.welcome")),
+                  Response.genText(i18n.__("get_started.guidance")),
+                  Response.genQuickReply(i18n.__("get_started.help"), [
+                    {
+                      title: i18n.__("menu.suggestion"),
+                      payload: "CURATION"
+                    },
+                    {
+                      title: i18n.__("menu.help"),
+                      payload: "CARE_HELP"
+                    }
+                  ])
+                ];
     } else {
       response = [
         Response.genText(
