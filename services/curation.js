@@ -83,7 +83,7 @@ module.exports = class Curation {
         break;
 
       case "CURATION_FOR_ME":
-        response.genQuickReply(i18n.__(this.generateInspiringQuote()));
+        response.genQuickReply(this.generateInspiringQuote());
         // response = this.generateInspiringQuote();
         break;
       case "CURATION_SOMEONE_ELSE":
