@@ -33,11 +33,15 @@ module.exports = class Care {
           }),
           [
             {
-              title: i18n.__("care.order"),
+              title: i18n.__("care.Covidstress"),
               payload: "CARE_ORDER"
             },
             {
-              title: i18n.__("care.billing"),
+              title: i18n.__("care.Depression"),
+              payload: "CARE_BILLING"
+            },
+            {
+              title: i18n.__("care.MentalHealth"),
               payload: "CARE_BILLING"
             },
             {

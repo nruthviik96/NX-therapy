@@ -53,7 +53,10 @@
     "default": "Hi {{userFirstName}}, my name is {{agentFirstName}}, I'm here to assist you today. How can I help you?",
     "style": "Hi {{userFirstName}}, my name is {{agentFirstName}}, I’m here to answer questions you might have on our health services",
     "end": "",
-    "help": "Help"
+    "help": "Help",
+    "Covidstress": "Covid Stress",
+    "Depression": "Depression/Anxiety",
+    "MentalHealth": "Mental Health"
   },
   "survey": {
     "prompt": "Hi, want to get quick feedback on your recent experience with {{agentFirstName}}",
