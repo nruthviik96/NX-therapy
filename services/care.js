@@ -34,15 +34,15 @@ module.exports = class Care {
           [
             {
               title: i18n.__("care.Covidstress"),
-              payload: "CARE_ORDER"
+              payload: "CARE_COVIDSTRESS"
             },
             {
               title: i18n.__("care.Depression"),
-              payload: "CARE_BILLING"
+              payload: "CARE_DEPRESSION"
             },
             {
               title: i18n.__("care.MentalHealth"),
-              payload: "CARE_BILLING"
+              payload: "CARE_MENTALHEALTH"
             },
             {
               title: i18n.__("care.other"),
@@ -51,7 +51,7 @@ module.exports = class Care {
           ]
         );
         break;
-      case "CARE_ORDER":
+      case "CARE_COVIDSTRESS":
         // Send using the Persona for order issues
 
         response = [
@@ -59,7 +59,7 @@ module.exports = class Care {
             i18n.__("care.issue", {
               userFirstName: this.user.firstName,
               agentFirstName: config.personaOrder.name,
-              topic: i18n.__("care.order")
+              topic: i18n.__("care.Covidstress")
             }),
             config.personaOrder.id
           ),
@@ -71,7 +71,7 @@ module.exports = class Care {
         ];
         break;
 
-      case "CARE_BILLING":
+      case "CARE_DEPRESSION":
         // Send using the Persona for billing issues
 
         response = [
@@ -79,7 +79,7 @@ module.exports = class Care {
             i18n.__("care.issue", {
               userFirstName: this.user.firstName,
               agentFirstName: config.personaBilling.name,
-              topic: i18n.__("care.billing")
+              topic: i18n.__("care.Depression")
             }),
             config.personaBilling.id
           ),
@@ -91,14 +91,15 @@ module.exports = class Care {
         ];
         break;
 
-      case "CARE_SALES":
+      case "CARE_MENTALHEALTH":
         // Send using the Persona for sales questions
 
         response = [
           Response.genTextWithPersona(
-            i18n.__("care.style", {
+            i18n.__("care.issue", {
               userFirstName: this.user.firstName,
               agentFirstName: config.personaSales.name
+              topic: i18n.__("care.MentalHealth")
             }),
             config.personaSales.id
           ),

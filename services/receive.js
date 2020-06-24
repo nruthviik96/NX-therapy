@@ -213,12 +213,16 @@ module.exports = class Receive {
         Response.genText(i18n.__("get_started.guidance")),
         Response.genQuickReply(i18n.__("get_started.help"), [
           {
-            title: i18n.__("care.order"),
-            payload: "CARE_ORDER"
+            title: i18n.__("care.Covidstress"),
+            payload: "CARE_COVIDSTRESS"
           },
           {
-            title: i18n.__("care.billing"),
-            payload: "CARE_BILLING"
+            title: i18n.__("care.Depression"),
+            payload: "CARE_DEPRESSION"
+          },
+          {
+            title: i18n.__("care.MentalHealth"),
+            payload: "CARE_MENTALHEALTH"
           },
           {
             title: i18n.__("care.other"),
